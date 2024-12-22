@@ -12,7 +12,6 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: "https://github.com/aleoreh/nodejs-pm2-deploy.git",
       path: DEPLOY_PATH,
-      "pre-deploy-local": `scp -Cr .env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/source/frontend`,
       "post-deploy": "cd frontend && npm install",
     },
   },
