@@ -12,7 +12,7 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: "https://github.com/aleoreh/nodejs-pm2-deploy.git",
       path: DEPLOY_PATH,
-      "post-deploy": "cd frontend && npm install",
+      "post-deploy": "cd frontend && npm install && npm run build",
     },
   },
 };
