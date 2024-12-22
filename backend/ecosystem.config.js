@@ -12,6 +12,7 @@ module.exports = {
     {
       name: 'app',
       script: './dist/app.js',
+      cwd: './backend',
       watch: '.',
     },
   ],
@@ -23,7 +24,7 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: 'https://github.com/aleoreh/nodejs-pm2-deploy.git',
       path: DEPLOY_PATH,
-      'pre-deploy-local': `scp -Cr .env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/source`,
+      'pre-deploy-local': `scp -Cr .env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/source/backend`,
       'post-deploy':
         'npm install && npm run build && pm2 startOrRestart ecosystem.config.js --env production',
       'pre-setup': '',
